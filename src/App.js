@@ -25,37 +25,37 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  const [token, setToken] = useState("");
-  useEffect(() => {
-    const msg = getMessaging(firebase);
-    getToken(msg, {
-      vapidKey:
-        "BBPheBQi6w9GQnn1oX9D7BwW720Sn1YPx4yxFGiSJe-tg9G7C7ijhQm6davHQ9rCHPnb0YtAnfaI56GM-_pok6Y",
-    })
-      .then((currentToken) => {
-        if (currentToken) {
-          // Send the token to your server and update the UI if necessary
-          // ...
-          console.log(currentToken);
-          setToken(currentToken);
-        } else {
-          // Show permission request UI
-          console.log(
-            "No registration token available. Request permission to generate one."
-          );
-          // ...
-        }
-      })
-      .catch((err) => {
-        console.log("An error occurred while retrieving token. ", err);
-        // ...
-      });
-  }, []);
+  //const [token, setToken] = useState("");
+  // useEffect(() => {
+  //   const msg = getMessaging(firebase);
+  //   getToken(msg, {
+  //     vapidKey:
+  //       "BBPheBQi6w9GQnn1oX9D7BwW720Sn1YPx4yxFGiSJe-tg9G7C7ijhQm6davHQ9rCHPnb0YtAnfaI56GM-_pok6Y",
+  //   })
+  //     .then((currentToken) => {
+  //       if (currentToken) {
+  //         // Send the token to your server and update the UI if necessary
+  //         // ...
+  //         console.log(currentToken);
+  //         setToken(currentToken);
+  //       } else {
+  //         // Show permission request UI
+  //         console.log(
+  //           "No registration token available. Request permission to generate one."
+  //         );
+  //         // ...
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log("An error occurred while retrieving token. ", err);
+  //       // ...
+  //     });
+  // }, []);
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home token={token} />} />
+          <Route index element={<Home token="{token}" />} />
           <Route path="about" element={<About />} />
           <Route path="users" element={<Users />} />
 

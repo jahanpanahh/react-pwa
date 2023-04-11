@@ -20,15 +20,15 @@ export default function swDev() {
     return urlBase64ToUint8Array(vapidPublicKey);
   }
 
-  let swURL = `${process.env.PUBLIC_URL}/sw.js`;
-  navigator.serviceWorker.register(swURL).then((resp) => {
-    console.warn("resp", resp);
+  // let swURL = `${process.env.PUBLIC_URL}/sw.js`;
+  // navigator.serviceWorker.register(swURL).then((resp) => {
+  //   console.warn("resp", resp);
 
-    return resp.pushManager.getSubscription().then((subscription) => {
-      resp.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: determineAppServerKey(),
-      });
-    });
-  });
+  //   // return resp.pushManager.getSubscription().then((subscription) => {
+  //   //   resp.pushManager.subscribe({
+  //   //     userVisibleOnly: true,
+  //   //     applicationServerKey: determineAppServerKey(),
+  //   //   });
+  //   // });
+  // });
 }
