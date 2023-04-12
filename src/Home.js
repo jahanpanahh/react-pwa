@@ -73,17 +73,17 @@ var requestOptions = {
   redirect: 'follow'
 };
 console.log(auth, "$$$$", p256dh);
-let currentURL = window.location.href;
-var url;
-console.log(currentURL.indexOf("localhost"));
-if(currentURL.indexOf("localhost") >= 0)
-{
-  url = `http://192.168.1.32:5242/savesub`
-}
-else
-{
-  url = `https://localhost:7018/savesub`
-}
+// let currentURL = window.location.href;
+var url = `https://qtv2p5dvsahdl6yt7bpae3sr2m0psget.lambda-url.ap-south-1.on.aws/savesub`
+// console.log(currentURL.indexOf("localhost"));
+// if(currentURL.indexOf("localhost") >= 0)
+// {
+//   url = `https://qtv2p5dvsahdl6yt7bpae3sr2m0psget.lambda-url.ap-south-1.on.aws/savesub`
+// }
+// else
+// {
+//   url = `https://qtv2p5dvsahdl6yt7bpae3sr2m0psget.lambda-url.ap-south-1.on.aws/savesub`
+// }
 
 fetch(url, requestOptions)
   .then(response => response.text())
